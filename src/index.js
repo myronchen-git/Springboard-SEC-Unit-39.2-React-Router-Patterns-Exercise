@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
 import DogFinderApp from './DogFinderApp';
-import ColorPickerApp from './ColorPickerApp';
+import ColorFactoryApp from './ColorFactoryApp';
 
 // ==================================================
 
@@ -14,7 +14,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       {/* <DogFinderApp /> */}
-      <ColorPickerApp />
+      <ColorFactoryApp />
     </BrowserRouter>
   </React.StrictMode>
 );

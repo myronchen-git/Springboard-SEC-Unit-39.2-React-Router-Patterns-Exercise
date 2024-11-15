@@ -4,14 +4,14 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import ColorList from './components/ColorList';
 import ColorPage from './components/ColorPage';
 import ColorNew from './components/ColorNew';
-import './ColorPickerApp.css';
+import './ColorFactoryApp.css';
 
 // ==================================================
 
 /**
  * App for viewing colors by name and saving new colors.
  */
-function ColorPickerApp() {
+function ColorFactoryApp() {
   const [colors, setColors] = useState({
     blue: '#0000FF',
     green: '#008000',
@@ -28,7 +28,7 @@ function ColorPickerApp() {
   }
 
   return (
-    <main className="ColorPickerApp">
+    <main className="ColorFactoryApp">
       <Routes>
         <Route path="/colors" element={<ColorList colors={colors} />} />
         <Route
@@ -47,4 +47,4 @@ function ColorPickerApp() {
 
 // ==================================================
 
-export default ColorPickerApp;
+export default ColorFactoryApp;
