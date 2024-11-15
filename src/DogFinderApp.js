@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 
+import DogList from './components/DogList';
 import DogDetails from './components/DogDetails';
 import './DogFinderApp.css';
 
@@ -25,7 +26,9 @@ function DogFinderApp() {
     <div className="DogFinderApp">
       <h1>Dog Finder</h1>
       <Routes>
+        <Route path="/dogs" element={<DogList dogs={dogs} />} />
         <Route path="/dogs/:id" element={<DogDetails dogs={dogs} />} />
+        <Route path="*" element={<Navigate to="/dogs" />} />
       </Routes>
     </div>
   );
