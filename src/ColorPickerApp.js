@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import ColorList from './components/ColorList';
+import ColorPage from './components/ColorPage';
 import './ColorPickerApp.css';
 
 // ==================================================
@@ -20,6 +21,10 @@ function ColorPickerApp() {
     <main className="ColorPickerApp">
       <Routes>
         <Route path="/colors" element={<ColorList colors={colors} />} />
+        <Route
+          path="/colors/:color"
+          element={<ColorPage getColorHex={(name) => colors[name]} />}
+        />
         <Route path="*" element={<Navigate to="/colors" />} />
       </Routes>
     </main>

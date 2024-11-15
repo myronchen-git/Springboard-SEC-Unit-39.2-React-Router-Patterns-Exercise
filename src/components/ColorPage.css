@@ -1,0 +1,12 @@
+.ColorPage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.ColorPage > p,
+.ColorPage > a {
+  color: white;
+  font-size: xx-large;
+}
