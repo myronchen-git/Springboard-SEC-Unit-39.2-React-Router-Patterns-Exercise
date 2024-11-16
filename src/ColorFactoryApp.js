@@ -1,9 +1,6 @@
 import { useState } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
-import ColorList from './components/ColorList';
-import ColorPage from './components/ColorPage';
-import ColorNew from './components/ColorNew';
 import './ColorFactoryApp.css';
 
 // ==================================================
@@ -19,6 +16,16 @@ function ColorFactoryApp() {
   });
 
   /**
+   * Gets the hex value of a saved color.
+   *
+   * @param {String} name - Name of a color.
+   * @returns {String} Hex value of the specified color.
+   */
+  function getColorHex(name) {
+    return colors[name];
+  }
+
+  /**
    * Adds new color to colors state.
    *
    * @param {Object} color - Contains color name and value ({ name: value }).
@@ -29,18 +36,7 @@ function ColorFactoryApp() {
 
   return (
     <main className="ColorFactoryApp">
-      <Routes>
-        <Route path="/colors" element={<ColorList colors={colors} />} />
-        <Route
-          path="/colors/:color"
-          element={<ColorPage getColorHex={(name) => colors[name]} />}
-        />
-        <Route
-          path="/colors/new"
-          element={<ColorNew saveColor={saveColor} />}
-        />
-        <Route path="*" element={<Navigate to="/colors" />} />
-      </Routes>
+      <Outlet context={{ colors, getColorHex, saveColor }} />
     </main>
   );
 }

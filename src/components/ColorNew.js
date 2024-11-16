@@ -1,16 +1,17 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 
 // ==================================================
 
 /**
  * Displays a form to choose a color and name it.
- *
- * @param {Object} props - The properties for this component.
- * @param {Function} props.saveColor - Adds color name and value to list of
- *   stored colors.  Parameters: { name: value }.
  */
-function ColorNew({ saveColor }) {
+function ColorNew() {
+  /**
+   * @type {Function} saveColor - Adds color name and value to list of
+   *   stored colors.  Parameters: { name: value }.
+   */
+  const { saveColor } = useOutletContext();
   const initialFormData = { colorName: '', colorValue: '#000000' };
   const [formData, setFormData] = useState(initialFormData);
   const navigate = useNavigate();

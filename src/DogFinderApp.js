@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import axios from 'axios';
 
-import DogList from './components/DogList';
-import DogDetails from './components/DogDetails';
 import DogNav from './components/DogNav';
+
 import './DogFinderApp.css';
 
 // ==================================================
@@ -13,6 +12,15 @@ import './DogFinderApp.css';
  * App for looking thru dogs and their details.
  */
 function DogFinderApp() {
+  /**
+   * @type {Object[]} dogs - List of dogs.
+   * @type {String} dogs[].name - Name of a dog.
+   * @type {String} dogs[].age - Age of a dog.
+   * @type {String} dogs[].src - Image name of a dog, without extension.
+   * @type {String[]} dogs[].facts - A list of facts about a dog.
+   * @type {String} dogs[].id - ID of a dog, which is given by json-server
+   *   module.
+   */
   const [dogs, setDogs] = useState([]);
 
   // Get dog data in JSON from API.
@@ -29,11 +37,7 @@ function DogFinderApp() {
     <div className="DogFinderApp">
       <DogNav navData={navData} />
       <h1>Dog Finder</h1>
-      <Routes>
-        <Route path="/dogs" element={<DogList dogs={dogs} />} />
-        <Route path="/dogs/:id" element={<DogDetails dogs={dogs} />} />
-        <Route path="*" element={<Navigate to="/dogs" />} />
-      </Routes>
+      <Outlet context={dogs} />
     </div>
   );
 }

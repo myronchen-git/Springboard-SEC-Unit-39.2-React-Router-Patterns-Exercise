@@ -1,21 +1,22 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 
 // ==================================================
 
 /**
  * Displays a list of names and pictures for dogs, and links to their details
  * page.
- *
- * @param {Object} props - The properties for this component.
- * @param {Object[]} props.dogs - The dogs to list.
- * @param {String} props.dogs[].name - Name of a dog.
- * @param {String} props.dogs[].age - Age of a dog.
- * @param {String} props.dogs[].src - Image name of a dog, without extension.
- * @param {String[]} props.dogs[].facts - A list of facts about a dog.
- * @param {String} props.dogs[].id - ID of a dog, which is given by json-server
- *   module.
  */
-function DogList({ dogs }) {
+function DogList() {
+  /**
+   * @type {Object[]} dogs - The dogs to list.
+   * @type {String} dogs[].name - Name of a dog.
+   * @type {String} dogs[].age - Age of a dog.
+   * @type {String} dogs[].src - Image name of a dog, without extension.
+   * @type {String[]} dogs[].facts - A list of facts about a dog.
+   * @type {String} dogs[].id - ID of a dog, which is given by json-server
+   *   module.
+   */
+  const dogs = useOutletContext();
   const navigate = useNavigate();
 
   return (

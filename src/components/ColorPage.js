@@ -1,4 +1,4 @@
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link, Navigate, useOutletContext, useParams } from 'react-router-dom';
 
 import './ColorPage.css';
 
@@ -6,12 +6,13 @@ import './ColorPage.css';
 
 /**
  * Displays a page filled with the chosen color.
- *
- * @param {Object} props - The properties for this component.
- * @param {Function} props.getColorHex - Uses function to get hex value of a
- *   color, instead of receiving all saved colors.
  */
-function ColorPage({ getColorHex }) {
+function ColorPage() {
+  /**
+   * @type {Function} getColorHex - Gets the hex value of a specific, saved
+   *   color; instead of receiving all saved colors.
+   */
+  const { getColorHex } = useOutletContext();
   const { color } = useParams();
 
   const colorHex = getColorHex(color);

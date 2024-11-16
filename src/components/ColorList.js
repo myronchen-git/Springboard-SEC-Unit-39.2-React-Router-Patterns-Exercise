@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
 
 import './ColorList.css';
 
@@ -6,11 +6,13 @@ import './ColorList.css';
 
 /**
  * Displays the list of saved colors and a way to add a new color.
- *
- * @param {Object} props - The properties for this component.
- * @param {Object} props.colors - Contains color name and hex value pairs.
  */
-function ColorList({ colors }) {
+function ColorList() {
+  /**
+   * @type {Object} colors - Contains color name and hex value pairs.
+   */
+  const { colors } = useOutletContext();
+
   return (
     <>
       <section className="ColorList__new-color">
