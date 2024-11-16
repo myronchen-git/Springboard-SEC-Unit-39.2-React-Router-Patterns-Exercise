@@ -31,13 +31,23 @@ function DogFinderApp() {
       .catch((err) => console.error(err));
   }, []);
 
+  /**
+   * Gets data for a specific dog.
+   *
+   * @param {String} id - ID of a dog, which is given by json-server module.
+   * @returns {Object} Dog data.
+   */
+  function getDog(id) {
+    return dogs.find((dog) => dog.id === id);
+  }
+
   const navData = dogs.map((dog) => ({ name: dog.name, id: dog.id }));
 
   return (
     <div className="DogFinderApp">
       <DogNav navData={navData} />
       <h1>Dog Finder</h1>
-      <Outlet context={dogs} />
+      <Outlet context={{ dogs, getDog }} />
     </div>
   );
 }

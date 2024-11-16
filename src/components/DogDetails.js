@@ -18,9 +18,9 @@ function DogDetails() {
    * @type {String} dogs[].id - ID of a dog, which is given by json-server
    *   module.
    */
-  const dogs = useOutletContext();
+  const { getDog } = useOutletContext();
 
-  const currentDog = dogs.find((dog) => dog.id === id);
+  const currentDog = getDog(id);
 
   if (currentDog) {
     return (

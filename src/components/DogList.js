@@ -16,7 +16,7 @@ function DogList() {
    * @type {String} dogs[].id - ID of a dog, which is given by json-server
    *   module.
    */
-  const dogs = useOutletContext();
+  const { dogs } = useOutletContext();
   const navigate = useNavigate();
 
   return (
