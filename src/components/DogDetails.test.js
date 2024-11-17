@@ -22,10 +22,7 @@ const dogId = '123';
 
 describe('DogDetails', () => {
   beforeEach(() => {
-    useParams.mockReset();
     useParams.mockReturnValue({ id: dogId });
-
-    mockGetDog.mockReset();
     mockGetDog.mockReturnValue(dogs[0]);
   });
 

@@ -20,10 +20,7 @@ jest.mock('react-router-dom', () => ({
 
 describe('DogList', () => {
   beforeEach(() => {
-    useOutletContext.mockReset();
     useOutletContext.mockReturnValue({ dogs });
-
-    mockNavigate.mockReset();
   });
 
   it('renders.', () => {
