@@ -1,5 +1,5 @@
 import { render, fireEvent } from '@testing-library/react';
-import { useOutletContext } from 'react-router-dom';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 
 import DogList from './DogList';
 
@@ -7,20 +7,16 @@ import {dogs} from '../../db.json' with {type: 'json'};
 
 // ==================================================
 
-const mockNavigate = jest.fn();
-
-jest.mock('react-router-dom', () => ({
-  __esModule: true,
-  ...jest.requireActual('react-router-dom'),
-  useOutletContext: jest.fn(),
-  useNavigate: () => mockNavigate,
-}));
+jest.mock('react-router-dom');
 
 // --------------------------------------------------
 
 describe('DogList', () => {
+  const mockNavigate = jest.fn();
+
   beforeEach(() => {
     useOutletContext.mockReturnValue({ dogs });
+    useNavigate.mockReturnValue(mockNavigate);
   });
 
   it('renders.', () => {

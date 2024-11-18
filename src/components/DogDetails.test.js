@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { useParams } from 'react-router-dom';
+import { useOutletContext, useParams } from 'react-router-dom';
 
 import DogDetails from './DogDetails';
 
@@ -7,22 +7,19 @@ import {dogs} from '../../db.json' with {type: 'json'};
 
 // ==================================================
 
-const mockGetDog = jest.fn();
-
-jest.mock('react-router-dom', () => ({
-  __esModule: true,
-  ...jest.requireActual('react-router-dom'),
-  useOutletContext: () => ({ getDog: mockGetDog }),
-  useParams: jest.fn(),
-}));
+jest.mock('react-router-dom');
 
 const dogId = '123';
 
 // --------------------------------------------------
 
 describe('DogDetails', () => {
+  const mockGetDog = jest.fn();
+
   beforeEach(() => {
+    useOutletContext.mockReturnValue({ getDog: mockGetDog });
     useParams.mockReturnValue({ id: dogId });
+
     mockGetDog.mockReturnValue(dogs[0]);
   });
 
