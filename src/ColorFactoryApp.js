@@ -1,5 +1,6 @@
-import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
+
+import { useLocalStorage } from './util/hooks';
 
 import './ColorFactoryApp.css';
 
@@ -9,7 +10,7 @@ import './ColorFactoryApp.css';
  * App for viewing colors by name and saving new colors.
  */
 function ColorFactoryApp() {
-  const [colors, setColors] = useState({
+  const [colors, setColors] = useLocalStorage('colors', {
     blue: '#0000FF',
     green: '#008000',
     red: '#FF0000',
