@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import AppSelector from './AppSelector';
+import CalculatorApp from './CalculatorApp';
 import ColorFactoryApp from './ColorFactoryApp';
 import ColorList from './components/ColorList';
 import ColorNew from './components/ColorNew';
@@ -23,6 +24,7 @@ const RoutesList = () => (
       <Route path="/colors/:color" element={<ColorPage />} />
       <Route path="/colors/new" element={<ColorNew />} />
     </Route>
+    <Route path="/calculator/:operation/:n1/:n2" element={<CalculatorApp />} />
     <Route path="*" element={<Navigate to="/" />} />
   </Routes>
 );
