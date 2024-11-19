@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+import './AppSelector.css';
+
 // ==================================================
 
 /**
@@ -7,12 +9,12 @@ import { Link } from 'react-router-dom';
  */
 function AppSelector() {
   return (
-    <main>
-      <Link to="/dogs">
+    <main className="AppSelector">
+      <Link className="AppSelector__appBox" to="/dogs">
         <h1>Part 1</h1>
         <h1>Dog Finder</h1>
       </Link>
-      <Link to="/colors">
+      <Link className="AppSelector__appBox" to="/colors">
         <h1>Part 2</h1>
         <h1>Color Factory</h1>
       </Link>

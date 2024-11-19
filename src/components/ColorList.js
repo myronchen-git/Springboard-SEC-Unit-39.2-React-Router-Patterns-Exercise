@@ -21,12 +21,14 @@ function ColorList() {
       </section>
       <section className="ColorList__color-selection">
         <h2>Please select a color.</h2>
-        <ul>
-          {Object.keys(colors)
+        <ul className="ColorList__color-selection__colors">
+          {Object.entries(colors)
             .reverse()
-            .map((name) => (
-              <li key={name}>
-                <Link to={`/colors/${name}`}>{name}</Link>
+            .map(([name, hex]) => (
+              <li key={name} className="ColorList__color-selection__color">
+                <Link to={`/colors/${name}`} style={{ color: hex }}>
+                  {name}
+                </Link>
               </li>
             ))}
         </ul>

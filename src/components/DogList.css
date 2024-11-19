@@ -1,0 +1,26 @@
+.DogList__list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.DogList img {
+  height: 10em;
+  width: 10em;
+  border-radius: 0.5em;
+}
+
+.DogList__dog {
+  cursor: pointer;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 0.5em;
+  background-color: lightblue;
+}
+
+.DogList__dog:hover,
+.DogList__dog:active {
+  outline: 0.125em solid black;
+}

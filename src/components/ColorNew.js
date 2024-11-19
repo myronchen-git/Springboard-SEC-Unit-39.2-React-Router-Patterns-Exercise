@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useNavigate, useOutletContext } from 'react-router-dom';
 
+import './ColorNew.css';
+
 // ==================================================
 
 /**
@@ -28,27 +30,33 @@ function ColorNew() {
   }
 
   return (
-    <form className="ColorNew" onSubmit={handleSubmit}>
-      <label htmlFor="ColorNew__input-color-name">Color Name</label>
-      <input
-        id="ColorNew__input-color-name"
-        type="text"
-        name="colorName"
-        value={formData.colorName}
-        required
-        onChange={handleChange}
-      />
-      <label htmlFor="ColorNew__input-color-value">Color Value</label>
-      <input
-        id="ColorNew__input-color-value"
-        type="color"
-        name="colorValue"
-        value={formData.colorValue}
-        required
-        onChange={handleChange}
-      />
-      <button type="submit">Add this color</button>
-    </form>
+    <section className="ColorNew">
+      <form className="ColorNew__form" onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="ColorNew__input-color-name">Color Name</label>
+          <input
+            id="ColorNew__input-color-name"
+            type="text"
+            name="colorName"
+            value={formData.colorName}
+            required
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="ColorNew__input-color-value">Color Value</label>
+          <input
+            id="ColorNew__input-color-value"
+            type="color"
+            name="colorValue"
+            value={formData.colorValue}
+            required
+            onChange={handleChange}
+          />
+        </div>
+        <button type="submit">Add this color</button>
+      </form>
+    </section>
   );
 }
 

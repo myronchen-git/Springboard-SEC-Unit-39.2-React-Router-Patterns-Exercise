@@ -1,0 +1,24 @@
+.DogNav {
+  background-color: steelblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.DogNav > a {
+  padding: 1em 2em;
+  color: white;
+  text-decoration: none;
+}
+
+.DogNav > a:hover,
+.DogNav > a:active {
+  text-shadow: black 0 0 0.5em;
+}
+
+.DogNav a.active {
+  color: black;
+  text-decoration: underline;
+  text-shadow: none;
+  font-weight: bold;
+}

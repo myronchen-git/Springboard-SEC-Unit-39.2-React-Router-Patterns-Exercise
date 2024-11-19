@@ -46,7 +46,7 @@ function DogFinderApp() {
   return (
     <div className="DogFinderApp">
       <DogNav navData={navData} />
-      <h1>Dog Finder</h1>
+      <h1 className="DogFinderApp-header">Dog Finder</h1>
       <Outlet context={{ dogs, getDog }} />
     </div>
   );

@@ -1,5 +1,7 @@
 import { useOutletContext, useParams } from 'react-router-dom';
 
+import './DogDetails.css';
+
 // ==================================================
 
 /**

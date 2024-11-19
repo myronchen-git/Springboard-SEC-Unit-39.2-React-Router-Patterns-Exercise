@@ -1,0 +1,24 @@
+.AppSelector {
+  height: 100vh;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 4rem;
+}
+
+.AppSelector__appBox {
+  height: 15rem;
+  width: 15rem;
+  padding: 2rem;
+  text-align: center;
+  background-color: #50eb50;
+  border-radius: 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+.AppSelector__appBox:hover,
+.AppSelector__appBox:active {
+  box-shadow: lightgreen 0 0 0.5rem 0.1rem;
+}

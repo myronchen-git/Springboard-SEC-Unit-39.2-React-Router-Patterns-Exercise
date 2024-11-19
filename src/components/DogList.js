@@ -1,5 +1,7 @@
 import { useNavigate, useOutletContext } from 'react-router-dom';
 
+import './DogList.css';
+
 // ==================================================
 
 /**
@@ -22,14 +24,14 @@ function DogList() {
   return (
     <main className="DogList">
       <h2>List of Dogs</h2>
-      <ol>
+      <ol className="DogList__list">
         {dogs.map((dog) => (
           <li
             key={dog.id}
             className="DogList__dog"
             onClick={() => navigate(`/dogs/${dog.id}`)}
           >
-            <p>{dog.name}</p>
+            <h3>{dog.name}</h3>
             <img src={dog.src + '.jpg'} alt={dog.name} />
           </li>
         ))}

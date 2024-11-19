@@ -1,0 +1,46 @@
+.ColorNew {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ColorNew__form {
+  height: 30em;
+  width: 30em;
+  margin: auto;
+  background-color: burlywood;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.ColorNew__form > div {
+  padding-left: 15%;
+  margin: 1em;
+  align-self: flex-start;
+}
+
+@media screen and (max-width: 576px) {
+  .ColorNew__form > div {
+    padding-left: inherit;
+    align-self: inherit;
+  }
+}
+
+.ColorNew label {
+  display: inline-block;
+  padding: 1em;
+}
+
+.ColorNew input {
+  margin: 0.5em 1em;
+}
+
+.ColorNew button {
+  width: 9em;
+  padding: 0.5em;
+  font-size: large;
+}

@@ -1,0 +1,22 @@
+.DogDetails {
+  display: inline-block;
+  padding: 2em;
+  margin: 2em;
+  background-color: lightblue;
+  border-radius: 2em;
+}
+
+.DogDetails__profile-photo {
+  height: 40em;
+  width: 40em;
+  border-radius: 1em;
+}
+
+.DogDetails__facts {
+  margin: 1em 0;
+}
+
+.DogDetails__facts > ul {
+  list-style-type: none;
+  padding: 0;
+}

@@ -76,8 +76,8 @@ describe('DogFinderApp', () => {
     );
 
     const nameElements = await findAllByText(dogs[0].name);
-    const navBtn = nameElements.find(el => {
-      return el.nodeName === 'A' && el.parentElement.className === 'Nav';
+    const navBtn = nameElements.find((el) => {
+      return el.nodeName === 'A' && el.parentElement.className === 'DogNav';
     });
 
     // Act
@@ -96,8 +96,8 @@ describe('DogFinderApp', () => {
     );
 
     const nameElements = await findAllByText(dogs[0].name);
-    const navBtn = nameElements.find(el => {
-      return el.nodeName === 'A' && el.parentElement.className === 'Nav';
+    const navBtn = nameElements.find((el) => {
+      return el.nodeName === 'A' && el.parentElement.className === 'DogNav';
     });
 
     fireEvent.click(navBtn);
@@ -112,6 +112,6 @@ describe('DogFinderApp', () => {
       dogImages.push(await findByAltText(dog.name));
     }
 
-    dogImages.forEach(image => expect(image).toBeVisible());
+    dogImages.forEach((image) => expect(image).toBeVisible());
   });
 });

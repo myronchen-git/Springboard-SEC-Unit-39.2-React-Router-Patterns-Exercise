@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
+import './DogNav.css';
+
 // ==================================================
 
 /**
@@ -13,7 +15,7 @@ import { NavLink } from 'react-router-dom';
  */
 function DogNav({ navData }) {
   return (
-    <nav className="Nav">
+    <nav className="DogNav">
       <NavLink to="/dogs" end>
         Home
       </NavLink>
