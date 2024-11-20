@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Dog Finder, Color Factory, Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project demonstrates the use of React Router. It includes 3 apps: Dog Finder and Color Factory, which contain UIs, and Calculator, which is reachable through URL routes.
 
-## Available Scripts
+Dog Finder lists dogs with their names and pictures. Clicking on a dog goes to its details page, where info like age and facts are displayed.
+Dog Finder also has a navigation bar that allows going between the list of dogs and each specific dog.
 
-In the project directory, you can run:
+Color Factory allows users to store a color value and its name, and to view a full page of that color. Colors are stored in local storage.
 
-### `yarn start`
+The Calculator has no UI, and is used by the URL "/calculator/:operation/:n1/:n2", where operation is add, subtract, multiply, and divide. It can only process 2 numbers, n1 and n2.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+A main landing webpage is used to allow selecting between Dog Finder and Color Factory. Layout routes are used to store the core dog and color data, and their functions for interacting with them. The data is passed to lists and pages through React Router's Outlet.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `yarn test`
+Tools used:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- JavaScript ECMAScript 2018
+- CSS
+- React 18
+- React Router 6
+- React Testing Library 16
+- Axios 1.7
+- Create React App
 
-### `yarn build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+\* Uses Create React App
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. How to start:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   ```
+   npm start
+   ```
